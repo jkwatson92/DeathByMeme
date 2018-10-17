@@ -5,7 +5,7 @@ using UnityEngine;
 public class Lighting : MonoBehaviour {
 
     Animator anim;
-    bool isFading = false;
+    bool isFading = true;
     //bool isStorming = true;
     private int randomLightning;
 
@@ -22,19 +22,12 @@ public class Lighting : MonoBehaviour {
     {
         isFading = true;
         anim.SetTrigger("lightning1");
-        while (isFading)
-        {
-        }
     }
 
     public void Lightning2()
     {
         isFading = true;
         anim.SetTrigger("lightning2");
-        while (isFading)
-        {
-
-        }
     }
 
     void ChooseLightning(){
@@ -43,10 +36,12 @@ public class Lighting : MonoBehaviour {
         switch (randomLightning)
         {
             case 0:
-                Lightning2();
+                Lightning1();
                 break;
             case 1:
-                Lightning1();
+                Lightning2();
+                break;
+            default:
                 break;
         }
     }
@@ -56,7 +51,7 @@ public class Lighting : MonoBehaviour {
     {
         if (!isFading)
         {
-                ChooseLightning();
+               ChooseLightning();
         }
     }
 }
