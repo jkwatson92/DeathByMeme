@@ -7,6 +7,8 @@ using UnityEngine.UI;
 
 public class ButtonHandler : MonoBehaviour
 {
+    public bool isStart;
+    public bool isQuit;
     public Text buttonText;
     // Use this for initialization
     void Start()
@@ -23,14 +25,17 @@ public class ButtonHandler : MonoBehaviour
         buttonText.color = Color.red;
     }
 
-    public void startGame()
+
+    public void OnMouseUp()
     {
-        SceneManager.LoadScene("First Floor", LoadSceneMode.Single);
+        if(isStart){
+            SceneManager.LoadScene(1, LoadSceneMode.Single);
+        }
+        if(isQuit){
+            Application.Quit();
+        }
     }
-    public void quitGame()
-    {
-        Application.Quit();
-    }
+
 
 
 }
