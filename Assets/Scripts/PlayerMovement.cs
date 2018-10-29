@@ -26,4 +26,13 @@ public class PlayerMovement : MonoBehaviour {
 		
         rbody.MovePosition(rbody.position + movement_V * Time.deltaTime * 70.0f);
 	}
+
+    void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.gameObject.CompareTag("PickUp"))
+        {
+            other.gameObject.SetActive(false);
+            Destroy(other.gameObject);
+        }
+    }
 }
