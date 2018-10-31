@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -49,6 +50,10 @@ public class PlayerMovement : MonoBehaviour
             other.gameObject.SetActive(false);
             Destroy(other.gameObject);
             Destroy(GameObject.FindGameObjectWithTag("Door"));
+        }
+        else if(other.gameObject.CompareTag("Enemy"))
+        {
+            SceneManager.LoadScene(2, LoadSceneMode.Single);
         }
     }
 
