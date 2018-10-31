@@ -210,7 +210,7 @@ GameObject:
   - component: {fileID: 508637548}
   m_Layer: 0
   m_Name: Moth 3
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -244,7 +244,7 @@ CircleCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0.17}
@@ -571,7 +571,7 @@ GameObject:
   - component: {fileID: 1065219244}
   m_Layer: 0
   m_Name: Moth
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -585,7 +585,7 @@ CircleCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0.02, y: 0.2}
@@ -3357,9 +3357,9 @@ MonoBehaviour:
   Effect1: {fileID: 8300000, guid: b8cb97417dfce4d16a6ef21ee3c1de51, type: 3}
   Effect2: {fileID: 8300000, guid: 7eec2222615bb494c9477a9bbd693940, type: 3}
   Effect3: {fileID: 8300000, guid: a07252002154a4b8187204d692d93dca, type: 3}
-  Effect4: {fileID: 8300000, guid: 82044319c75574ed2b28061c3d3f0272, type: 3}
-  Effect5: {fileID: 0}
-  Effect6: {fileID: 0}
+  Effect4: {fileID: 8300000, guid: 621a9725648764fa194bff2f5b92d276, type: 3}
+  Effect5: {fileID: 8300000, guid: 70f6d69d4e8ce40ea8887397f14622b7, type: 3}
+  Effect6: {fileID: 8300000, guid: a07252002154a4b8187204d692d93dca, type: 3}
   EffectSource: {fileID: 1876159049}
 --- !u!82 &1876159048
 AudioSource:
@@ -3584,7 +3584,7 @@ GameObject:
   - component: {fileID: 2103623616}
   m_Layer: 0
   m_Name: Moth 2
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3668,7 +3668,7 @@ CircleCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0.01, y: 0.15}
