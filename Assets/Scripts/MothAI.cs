@@ -4,35 +4,53 @@ using UnityEngine;
 using UnityEngine.AI;
 
 public class MothAI : MonoBehaviour {
-    public Transform[] EnemyPoints;
-    Transform currentPoint;
-    int currentPointIndex;
+    float savedTime;
+    Animator anim;
 
     // Use this for initialization
     void Start()
     {
-        currentPointIndex = 0;
-        currentPoint = EnemyPoints[currentPointIndex];
+        savedTime = Time.time;
+        anim = GetComponent<Animator>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        transform.Translate(Vector3.right * Time.deltaTime * 10f);
-        if(Vector3.Distance(transform.position, currentPoint.position)<.1f){
-            if (currentPointIndex + 1 < EnemyPoints.Length)
-            {
-                currentPointIndex++;
-            } else {
-                currentPointIndex = 0;
-            }
-            currentPoint = EnemyPoints[currentPointIndex];
+        float counter = Time.time - savedTime;
+        if (counter <= 5)
+        {
+            transform.Translate(Vector3.up * Time.deltaTime * 60f);
+            anim.SetBool("MothUp", true);
         }
-        Vector3 direction = currentPoint.position - transform.position;
-        float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg -90f;
-        Quaternion q = Quaternion.AngleAxis(angle, Vector3.forward);
-        transform.rotation = Quaternion.RotateTowards(transform.rotation, q, 180f);
-
+        else if (counter > 5 && counter <= 10)
+        {
+            transform.Translate(Vector3.down * Time.deltaTime * 60f);
+            anim.SetBool("MothUp", false);
+            anim.SetBool("MothDown", true);
+        }
+        else if (counter > 10 && counter <= 15)
+        {
+            transform.Translate(Vector3.left * Time.deltaTime * 25f);
+            anim.SetBool("MothDown", false);
+            anim.SetBool("MothLeft", true);
+        }
+        else if (counter > 15 && counter <= 25)
+        {
+            transform.Translate(Vector3.right * Time.deltaTime * 25f);
+            anim.SetBool("MothLeft", false);
+            anim.SetBool("MothRight", true);
+        }
+        else if (counter > 25 && counter <= 30)
+        {
+            transform.Translate(Vector3.left * Time.deltaTime * 25f);
+            anim.SetBool("MothRight", false);
+            anim.SetBool("MothLeft", true);
+        }
+        else
+        {
+            savedTime = Time.time;
+            anim.SetBool("MothLeft", false);
+        }
     }
-
 }

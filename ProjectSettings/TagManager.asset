@@ -8,6 +8,9 @@ TagManager:
   - Obstacle
   - Fader
   - PickUp
+  - Door
+  - DoorTrigger
+  - Enemy
   layers:
   - Default
   - TransparentFX

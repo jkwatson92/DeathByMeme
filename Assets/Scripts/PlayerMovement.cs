@@ -44,7 +44,16 @@ public class PlayerMovement : MonoBehaviour
             other.gameObject.SetActive(false);
             Destroy(other.gameObject);
         }
+        else if(other.gameObject.CompareTag("DoorTrigger"))
+        {
+            other.gameObject.SetActive(false);
+            Destroy(other.gameObject);
+            Destroy(GameObject.FindGameObjectWithTag("Door"));
+        }
     }
+
+
+
     void QuitGame()
     {
         #if UNITY_EDITOR
