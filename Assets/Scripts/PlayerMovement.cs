@@ -8,6 +8,9 @@ public class PlayerMovement : MonoBehaviour
 
     Rigidbody2D rbody;
     Animator anim;
+    public Transform target;
+    public AudioClip Effect1;
+    public AudioSource EffectSource;
 
     // Use this for initialization
     void Start()
@@ -32,6 +35,7 @@ public class PlayerMovement : MonoBehaviour
         }
 
         rbody.MovePosition(rbody.position + movement_V * Time.deltaTime * 70.0f);
+
         if (Input.GetKeyDown("escape"))
         {
             QuitGame();
@@ -47,17 +51,26 @@ public class PlayerMovement : MonoBehaviour
         }
         else if(other.gameObject.CompareTag("DoorTrigger"))
         {
-            other.gameObject.SetActive(false);
-            Destroy(other.gameObject);
-            Destroy(GameObject.FindGameObjectWithTag("Door"));
+            //other.gameObject.SetActive(false);
+            //Destroy(other.gameObject);
+            //Destroy(GameObject.FindGameObjectWithTag("Door"));
+            if (GameObject.FindGameObjectWithTag("Door").activeInHierarchy){
+                EffectSource.volume = 1;
+                EffectSource.clip = Effect1;
+                EffectSource.Play();
+                GameObject.FindGameObjectWithTag("Door").SetActive(false);
+            }else{
+                EffectSource.volume = 1;
+                EffectSource.clip = Effect1;
+                EffectSource.Play();
+                GameObject.FindGameObjectWithTag("Door").SetActive(true);
+            }
         }
         else if(other.gameObject.CompareTag("Enemy"))
         {
             SceneManager.LoadScene(2, LoadSceneMode.Single);
         }
     }
-
-
 
     void QuitGame()
     {
