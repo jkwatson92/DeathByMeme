@@ -8,6 +8,8 @@ public class RandomEffects : MonoBehaviour {
     public AudioClip Effect2;
     public AudioClip Effect3;
     public AudioClip Effect4;
+    public AudioClip Effect5;
+    public AudioClip Effect6;
     public AudioSource EffectSource;
 
     private int randomEffect;
@@ -39,7 +41,7 @@ public class RandomEffects : MonoBehaviour {
    void ChooseEffect(){
 
         //Chooses between 0-3 for a random effect to play at a random time
-        randomEffect = Random.Range(0, 3);
+        randomEffect = Random.Range(0, 5);
 
         switch(randomEffect){
             case 0:
@@ -58,6 +60,13 @@ public class RandomEffects : MonoBehaviour {
                 EffectSource.clip = Effect4;
                 break;
 
+            case 4:
+                EffectSource.clip = Effect5;
+                break;
+
+            case 5:
+                EffectSource.clip = Effect6;
+                break;
         }
 
 
