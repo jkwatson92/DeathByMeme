@@ -821,12 +821,12 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1234388061}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 244, y: -1559, z: -1}
+  m_LocalPosition: {x: 246.5, y: -1562.9, z: -1}
   m_LocalScale: {x: 50, y: 50, z: 50}
   m_Children:
   - {fileID: 2018340973}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1234388065
 MonoBehaviour:
@@ -921,7 +921,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4657502877474502, guid: c2772b298d9984b3896c82e1e35d79ba, type: 2}
       propertyPath: m_RootOrder
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4657502877474502, guid: c2772b298d9984b3896c82e1e35d79ba, type: 2}
       propertyPath: m_LocalScale.x
@@ -2956,6 +2956,10 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4759351982543674, guid: 0ddea81a21def2441b61569e0a44ca14, type: 2}
       propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1147965471979518, guid: 0ddea81a21def2441b61569e0a44ca14, type: 2}
+      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
