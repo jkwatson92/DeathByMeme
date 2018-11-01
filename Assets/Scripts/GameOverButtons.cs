@@ -13,8 +13,12 @@ public class GameOverButtons : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		
-	}
+        if (Input.GetKeyDown("escape"))
+        {
+            QuitGame();
+        }
+
+    }
     public void OnMouseUp()
     {
         if (mainMenu)
@@ -25,5 +29,13 @@ public class GameOverButtons : MonoBehaviour {
         {
             SceneManager.LoadScene(1, LoadSceneMode.Single);
         }
+    }
+    void QuitGame()
+    {
+        #if UNITY_EDITOR
+            UnityEditor.EditorApplication.isPlaying = false;
+        #else
+            Application.Quit();
+        #endif
     }
 }

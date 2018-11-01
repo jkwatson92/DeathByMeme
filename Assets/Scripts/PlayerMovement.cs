@@ -5,7 +5,8 @@ using UnityEngine.SceneManagement;
 
 public class PlayerMovement : MonoBehaviour
 {
-
+    public AudioClip effect;
+    public AudioSource effectSource;
     Rigidbody2D rbody;
     Animator anim;
 
@@ -48,6 +49,9 @@ public class PlayerMovement : MonoBehaviour
         }
         else if(other.gameObject.CompareTag("DoorTrigger"))
         {
+            Debug.Log("Player collided");
+            effectSource.clip = effect;
+            effectSource.Play();
             other.gameObject.SetActive(false);
             Destroy(other.gameObject);
             Destroy(GameObject.FindGameObjectWithTag("Door"));
